@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberian Association of Austin Texas | LAAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #BF0A30;
+    --red-dark: #8C0020;
+    --red-light: #F5E0E5;
+    --blue: #003897;
+    --blue-dark: #001F5C;
+    --blue-mid: #0050B3;
+    --blue-light: #E0EBFF;
+    --white: #FFFFFF;
+    --ivory: #FDFAF5;
+    --gold: #C49A00;
+    --gold-light: #FFF8DC;
+    --gray-100: #F7F7F5;
+    --gray-200: #EBEBEA;
+    --gray-400: #9A9A96;
+    --gray-600: #5A5A56;
+    --gray-800: #2A2A28;
+    --text: #1A1A18;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.13);
+    --radius: 8px;
+    --radius-lg: 14px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text); background: var(--white); font-size: 16px; line-height: 1.65; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--blue-dark);
+    border-bottom: 3px solid var(--red);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-badge {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--red); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+    letter-spacing: 0.5px; flex-shrink: 0;
+  }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .nav-logo-title { color: var(--white); font-weight: 600; font-size: 15px; letter-spacing: 0.3px; }
+  .nav-logo-sub { color: rgba(255,255,255,0.55); font-size: 11px; font-weight: 300; letter-spacing: 0.5px; }
+  .nav-links { display: flex; align-items: center; gap: 2px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 6px;
+    transition: color 0.2s, background 0.2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.1); }
+  .nav-cta {
+    background: var(--red); color: var(--white) !important;
+    padding: 7px 16px !important; border-radius: 6px !important;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: #9f0026 !important; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, #0066CC 100%);
+    position: relative; overflow: hidden; padding: 80px 24px 90px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(191,10,48,0.18) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+  }
+  .hero-flag-stripe {
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(90deg,
+      var(--red) 0%, var(--red) 9.09%,
+      var(--white) 9.09%, var(--white) 18.18%,
+      var(--red) 18.18%, var(--red) 27.27%,
+      var(--white) 27.27%, var(--white) 36.36%,
+      var(--red) 36.36%, var(--red) 45.45%,
+      var(--white) 45.45%, var(--white) 54.54%,
+      var(--red) 54.54%, var(--red) 63.63%,
+      var(--white) 63.63%, var(--white) 72.72%,
+      var(--red) 72.72%, var(--red) 81.81%,
+      var(--white) 81.81%, var(--white) 90.9%,
+      var(--red) 90.9%, var(--red) 100%
+    );
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-content { max-width: 700px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.12;
+    color: var(--white); margin-bottom: 22px;
+  }
+  .hero h1 span { color: #FFC94D; }
+  .hero-sub {
+    color: rgba(255,255,255,0.78); font-size: 18px; font-weight: 300;
+    margin-bottom: 36px; max-width: 540px; line-height: 1.6;
+  }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 26px; border-radius: var(--radius); font-size: 15px; font-weight: 600;
+    cursor: pointer; text-decoration: none; border: none; transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(191,10,48,0.35); }
+  .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+  .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
+  .btn-white { background: var(--white); color: var(--blue-dark); }
+  .btn-white:hover { background: var(--ivory); transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: var(--white); }
+  .btn-gold:hover { background: #a07e00; transform: translateY(-1px); }
+  .btn-sm { padding: 9px 18px; font-size: 13px; }
+
+  /* STATS */
+  .stats {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 36px 24px;
+  }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .stat-item { text-align: center; padding: 16px 24px; border-right: 1px solid var(--gray-200); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--font-display); font-size: 42px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+  .stat-label { font-size: 13px; color: var(--gray-600); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 18px;
+  }
+  .section-sub { font-size: 17px; color: var(--gray-600); max-width: 560px; line-height: 1.65; margin-bottom: 48px; }
+
+  /* ALTERNATING BG */
+  .bg-ivory { background: var(--ivory); }
+  .bg-blue { background: var(--blue-dark); }
+  .bg-gray { background: var(--gray-100); }
+
+  /* MISSION / VISION */
+  .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .mv-card {
+    padding: 40px; border-radius: var(--radius-lg);
+    border-left: 5px solid var(--red);
+    background: var(--white); box-shadow: var(--shadow-md);
+  }
+  .mv-card.vision { border-left-color: var(--blue); }
+  .mv-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+  .mv-card p { color: var(--gray-600); font-size: 16px; line-height: 1.7; }
+
+  /* ABOUT GRID */
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+  .about-img-placeholder {
+    background: linear-gradient(135deg, var(--blue-light), var(--red-light));
+    border-radius: var(--radius-lg); aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .about-img-placeholder::after {
+    content: '🇱🇷'; font-size: 80px; opacity: 0.25;
+  }
+  .about-flag {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+  }
+  .flag-stripe { flex: 1; }
+  .flag-stripe.red { background: var(--red); opacity: 0.15; }
+  .flag-stripe.white { background: var(--white); opacity: 0.2; }
+  .values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .value-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 14px 16px; background: var(--gray-100); border-radius: var(--radius);
+  }
+  .value-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .value-text { font-size: 14px; color: var(--gray-600); font-weight: 500; }
+
+  /* EVENTS */
+  .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .event-card {
+    background: var(--white); border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200); overflow: hidden;
+    box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .event-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .event-header {
+    padding: 20px 24px 16px; border-bottom: 1px solid var(--gray-200);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .event-date {
+    background: var(--red); color: var(--white); border-radius: var(--radius);
+    text-align: center; padding: 8px 14px; flex-shrink: 0;
+    min-width: 52px;
+  }
+  .event-date .month { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .event-date .day { font-size: 26px; font-weight: 700; line-height: 1; font-family: var(--font-display); }
+  .event-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+  .event-info p { font-size: 13px; color: var(--gray-600); }
+  .event-body { padding: 16px 24px 20px; }
+  .event-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+    background: var(--blue-light); color: var(--blue-dark);
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .event-tag.cultural { background: var(--gold-light); color: #7a5800; }
+  .event-tag.youth { background: #E8F5E9; color: #1B5E20; }
+  .event-tag.fundraiser { background: var(--red-light); color: var(--red-dark); }
+
+  /* TRANSPARENCY */
+  .transparency-bg {
+    background: var(--blue-dark); color: var(--white);
+  }
+  .transparency-bg .section-title { color: var(--white); }
+  .transparency-bg .section-sub { color: rgba(255,255,255,0.65); }
+  .trans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .trans-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg); padding: 28px 24px;
+    transition: background 0.2s, transform 0.2s; cursor: pointer;
+  }
+  .trans-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
+  a.trans-card { text-decoration: none; color: inherit; display: block; }
+  .trans-card-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(255,255,255,0.12); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; margin-bottom: 16px;
+  }
+  .trans-card h4 { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .trans-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.55; }
+  .trans-quote {
+    margin-top: 48px; padding: 32px 40px;
+    background: rgba(255,255,255,0.06); border-radius: var(--radius-lg);
+    border-left: 4px solid var(--red); text-align: center;
+  }
+  .trans-quote blockquote {
+    font-family: var(--font-display); font-size: 22px; font-style: italic;
+    color: rgba(255,255,255,0.9); margin-bottom: 8px;
+  }
+  .trans-quote cite { font-size: 13px; color: rgba(255,255,255,0.45); font-style: normal; }
+
+  /* MEMBERSHIP */
+  .membership-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 8px; }
+  .mem-card {
+    border-radius: var(--radius-lg); overflow: hidden;
+    border: 1px solid var(--gray-200); background: var(--white);
+    box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  }
+  .mem-card.featured { border-color: var(--blue); border-width: 2px; box-shadow: var(--shadow-md); }
+  .mem-header { padding: 28px 28px 20px; border-bottom: 1px solid var(--gray-200); }
+  .mem-header.featured-header { background: var(--blue-dark); }
+  .mem-badge {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--gold); background: var(--gold-light); padding: 3px 10px;
+    border-radius: 20px; margin-bottom: 12px; display: inline-block;
+  }
+  .mem-badge.featured-badge { background: rgba(255,201,77,0.2); color: #FFC94D; }
+  .mem-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+  .mem-header.featured-header .mem-title { color: var(--white); }
+  .mem-price { font-size: 28px; font-weight: 700; color: var(--blue); margin-top: 8px; }
+  .mem-price span { font-size: 14px; font-weight: 400; color: var(--gray-400); }
+  .mem-header.featured-header .mem-price { color: #FFC94D; }
+  .mem-body { padding: 24px 28px; flex: 1; }
+  .mem-features { list-style: none; }
+  .mem-features li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; font-size: 14px; color: var(--gray-600); }
+  .mem-features li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .mem-footer { padding: 20px 28px; border-top: 1px solid var(--gray-200); }
+
+  /* YOUTH */
+  .youth-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .youth-card {
+    padding: 28px; background: var(--white);
+    border-radius: var(--radius-lg); border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm); display: flex; gap: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .youth-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .youth-icon {
+    width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 26px;
+  }
+  .youth-card h4 { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .youth-card p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+
+  /* BUSINESS */
+  .biz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .biz-card {
+    background: var(--white); border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200); padding: 24px;
+    box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .biz-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .biz-avatar {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--blue-light); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; margin-bottom: 14px;
+  }
+  .biz-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .biz-category { font-size: 12px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .biz-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+
+  /* WELFARE */
+  .welfare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .welfare-card {
+    padding: 28px; background: var(--white); border-radius: var(--radius-lg);
+    border-top: 4px solid var(--red); box-shadow: var(--shadow-sm); text-align: center;
+  }
+  .welfare-card.blue-top { border-top-color: var(--blue); }
+  .welfare-card.gold-top { border-top-color: var(--gold); }
+  .welfare-icon { font-size: 36px; margin-bottom: 14px; }
+  .welfare-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+  .welfare-card p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px; margin-top: 16px;
+  }
+  .gallery-cell {
+    border-radius: var(--radius-lg); overflow: hidden; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px; font-weight: 700; color: rgba(255,255,255,0.5);
+  }
+  .gallery-cell:first-child { grid-row: 1 / 3; }
+  .gc1 { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); }
+  .gc2 { background: linear-gradient(135deg, var(--red) 0%, #7B0020 100%); }
+  .gc3 { background: linear-gradient(135deg, #1A6B3A 0%, #0D4020 100%); }
+  .gc4 { background: linear-gradient(135deg, var(--gold) 0%, #9A6B00 100%); }
+  .gc5 { background: linear-gradient(135deg, #5C3A8C 0%, #2E1A50 100%); }
+  .gallery-cell-overlay {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+  }
+  .gallery-cell-label { color: var(--white); font-size: 14px; font-weight: 600; }
+  .gallery-cell-sub { color: rgba(255,255,255,0.65); font-size: 12px; }
+
+  /* PRESIDENT */
+  .president-section { background: var(--ivory); }
+  .president-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .president-photo {
+    width: 100px; height: 100px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-light), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 38px; margin: 0 auto 24px; border: 4px solid var(--white);
+    box-shadow: var(--shadow-md);
+  }
+  .president-quote {
+    font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 26px);
+    font-style: italic; line-height: 1.5; color: var(--text);
+    margin-bottom: 24px;
+  }
+  .president-name { font-weight: 600; font-size: 16px; color: var(--text); }
+  .president-title { font-size: 13px; color: var(--gray-400); }
+
+  /* DONATE */
+  .donate-bg { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); }
+  .donate-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .donate-inner .section-title { color: var(--white); }
+  .donate-inner p { color: rgba(255,255,255,0.78); font-size: 17px; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .donate-tiers { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+  .donate-tier {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: var(--radius); padding: 12px 24px; color: var(--white);
+    cursor: pointer; font-size: 15px; font-weight: 600; transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+  .donate-tier:hover, .donate-tier.active { background: rgba(255,255,255,0.9); color: var(--red-dark); }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; }
+  .contact-info h3 { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 24px; }
+  .contact-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+    background: var(--blue-light); display: flex; align-items: center;
+    justify-content: center; font-size: 18px; color: var(--blue);
+  }
+  .contact-item h5 { font-size: 13px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .contact-item p { font-size: 15px; color: var(--text); font-weight: 500; }
+  .contact-form { background: var(--white); border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--gray-200); box-shadow: var(--shadow-md); }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-control {
+    width: 100%; padding: 11px 14px; border-radius: var(--radius);
+    border: 1.5px solid var(--gray-200); font-size: 15px; font-family: var(--font-body);
+    color: var(--text); background: var(--white); transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-control:focus { border-color: var(--blue); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  textarea.form-control { resize: vertical; min-height: 110px; }
+
+  /* SOCIAL */
+  .social-links { display: flex; gap: 12px; margin-top: 28px; }
+  .social-link {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--gray-100); display: flex; align-items: center;
+    justify-content: center; font-size: 18px; text-decoration: none;
+    color: var(--gray-600); transition: background 0.2s, color 0.2s;
+  }
+  .social-link:hover { background: var(--blue); color: var(--white); }
+
+  /* FOOTER */
+  footer { background: var(--gray-800); color: rgba(255,255,255,0.65); padding: 56px 24px 28px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+  .footer-col h4 { color: var(--white); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  /* NEWSLETTER */
+  .newsletter-row { display: flex; gap: 10px; margin-top: 16px; }
+  .newsletter-input {
+    flex: 1; padding: 9px 14px; border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.07);
+    color: var(--white); font-size: 14px; font-family: var(--font-body); outline: none;
+  }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.35); }
+  .newsletter-input:focus { border-color: rgba(255,255,255,0.4); }
+  .newsletter-btn {
+    padding: 9px 18px; border-radius: var(--radius);
+    background: var(--red); color: var(--white); border: none;
+    font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-body);
+    transition: background 0.2s;
+  }
+  .newsletter-btn:hover { background: var(--red-dark); }
+
+  /* SCROLL-ANIMATE */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* MAP PLACEHOLDER */
+  .map-placeholder {
+    height: 220px; border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--blue-light), var(--gray-200));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    margin-top: 28px; color: var(--blue); gap: 8px;
+    border: 1px solid var(--gray-200);
+  }
+  .map-placeholder .map-icon { font-size: 36px; }
+  .map-placeholder p { font-size: 14px; color: var(--gray-600); }
+  .map-placeholder strong { font-size: 15px; color: var(--blue); }
+
+  /* MOBILE NAV */
+  .mobile-menu-btn { display: none; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; cursor: pointer;
+      color: var(--white); font-size: 20px;
+    }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+    .stat-item:nth-child(odd) { border-right: 1px solid var(--gray-200); }
+    .about-grid, .mv-grid, .contact-grid { grid-template-columns: 1fr; }
+    .events-grid, .trans-grid, .biz-grid, .welfare-grid { grid-template-columns: 1fr 1fr; }
+    .membership-grid { grid-template-columns: 1fr; }
+    .youth-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-cell:first-child { grid-row: auto; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .events-grid, .trans-grid, .biz-grid, .welfare-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 32px; }
+  }
+
+  /* ANCHOR OFFSET FOR STICKY NAV */
+  [id] { scroll-margin-top: 80px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">
+      <div class="nav-logo-badge">LAAT</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-title">Liberian Association of Austin</span>
+        <span class="nav-logo-sub">Austin, Texas · EST. 2000s</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#membership">Membership</a>
+      <a href="#events">Events</a>
+      <a href="#transparency">Transparency</a>
+      <a href="#youth">Youth</a>
+      <a href="#business">Business</a>
+      <a href="#donate" class="nav-cta">Donate</a>
+    </div>
+    <div class="mobile-menu-btn" onclick="toggleMobileNav()">☰</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero" style="padding-top: 90px;">
+  <div class="hero-flag-stripe"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🇱🇷 &nbsp; Austin, Texas</div>
+      <h1>Building <span>Community.</span><br>Preserving Heritage.<br>Empowering the Future.</h1>
+      <p class="hero-sub">The Liberian Association of Austin Texas unites and empowers Liberians through cultural pride, community engagement, and mutual support.</p>
+      <div class="hero-btns">
+        <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-primary">Join LAAT</a>
+        <a href="#events" class="btn btn-outline">Upcoming Events</a>
+        <a href="#donate" class="btn btn-gold">Donate</a>
+        <a href="#contact" class="btn btn-outline">Volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num" id="stats-members">350+</div>
+      <div class="stat-label">Members</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Families Supported</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80+</div>
+      <div class="stat-label">Events Hosted</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Scholarships Awarded</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">About LAAT</span>
+        <h2 class="section-title">Our Story &amp; Purpose</h2>
+        <p style="font-size:16px; color:var(--gray-600); line-height:1.75; margin-bottom:20px;">The Liberian Association of Austin Texas (LAAT) was established to serve as the primary civic organization for Liberians and friends of Liberia in Central Texas. From our earliest days, LAAT has been a home away from home — a place where culture is kept alive, voices are heard, and families are supported.</p>
+        <p style="font-size:16px; color:var(--gray-600); line-height:1.75; margin-bottom:28px;">We believe that a strong community is built on unity, transparency, and shared purpose. Through advocacy, outreach, cultural programs, and welfare services, LAAT continues to build a foundation for generations to come.</p>
+        <div class="values-list">
+          <div class="value-item"><span class="value-icon">🤝</span><span class="value-text">Unity &amp; Solidarity</span></div>
+          <div class="value-item"><span class="value-icon">🏛️</span><span class="value-text">Accountability</span></div>
+          <div class="value-item"><span class="value-icon">🌍</span><span class="value-text">Cultural Pride</span></div>
+          <div class="value-item"><span class="value-icon">📚</span><span class="value-text">Education First</span></div>
+          <div class="value-item"><span class="value-icon">💡</span><span class="value-text">Empowerment</span></div>
+          <div class="value-item"><span class="value-icon">❤️</span><span class="value-text">Compassion</span></div>
+        </div>
+        <div style="margin-top:28px; display:flex; gap:12px;">
+          <a href="https://app.alkeledger.com/laat/documents" target="_blank" class="btn btn-white" style="background:var(--blue); color:var(--white);">Our Constitution</a>
+          <a href="https://app.alkeledger.com/laat/members" target="_blank" class="btn btn-outline" style="color:var(--blue); border-color:var(--blue);">Meet Leadership</a>
+        </div>
+      </div>
+      <div>
+        <div class="about-img-placeholder">
+          <div class="about-flag">
+            <div class="flag-stripe red"></div><div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div><div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div><div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div><div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div><div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div>
+          </div>
+          <div style="position:relative; z-index:2; text-align:center; padding:24px;">
+            <div style="font-size:80px; opacity:0.7;">🇱🇷</div>
+            <p style="color:rgba(255,255,255,0.85); font-size:15px; margin-top:12px; font-style:italic; font-family:var(--font-display);">"Together We Rise as One Community"</p>
+          </div>
+        </div>
+        <div class="mv-grid" style="margin-top:24px;">
+          <div class="mv-card" style="padding:24px;">
+            <h3 style="font-size:18px;">Mission</h3>
+            <p style="font-size:13px;">To unite and empower Liberians in Austin through engagement, cultural preservation, education, and support services.</p>
+          </div>
+          <div class="mv-card vision" style="padding:24px;">
+            <h3 style="font-size:18px;">Vision</h3>
+            <p style="font-size:13px;">To become the most respected African community organization in Texas through unity and sustainable development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="bg-gray">
+  <div class="section-inner">
+    <span class="section-tag">Calendar</span>
+    <h2 class="section-title">Upcoming Events</h2>
+    <p class="section-sub">Stay connected with LAAT's vibrant calendar of community meetings, cultural festivals, and youth programs.</p>
+    <div class="events-grid" id="laat-events-grid">
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date"><div class="month">Jul</div><div class="day">12</div></div>
+          <div class="event-info"><h4>Monthly General Meeting</h4><p>📍 Austin Central Library · 6:00 PM</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag">Meeting</span>
+          <p style="font-size:14px; color:var(--gray-600);">Quarterly updates, community announcements, and open forum for members.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:var(--blue); color:var(--white); display:inline-flex;">RSVP</a>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date" style="background:var(--gold);"><div class="month">Jul</div><div class="day">26</div></div>
+          <div class="event-info"><h4>Liberia Independence Day Celebration</h4><p>📍 Fiesta Gardens · 12:00 PM</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag cultural">Cultural</span>
+          <p style="font-size:14px; color:var(--gray-600);">Annual celebration of Liberian independence with food, music, dance, and cultural exhibitions.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:var(--gold); color:var(--white); display:inline-flex;">RSVP</a>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date" style="background:#1B5E20;"><div class="month">Aug</div><div class="day">03</div></div>
+          <div class="event-info"><h4>Youth Leadership Workshop</h4><p>📍 Carver Museum · 10:00 AM</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag youth">Youth</span>
+          <p style="font-size:14px; color:var(--gray-600);">A one-day leadership development program for Liberian youth ages 14–22.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:#1B5E20; color:var(--white); display:inline-flex;">RSVP</a>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date" style="background:var(--red-dark);"><div class="month">Aug</div><div class="day">17</div></div>
+          <div class="event-info"><h4>Community Fundraiser Gala</h4><p>📍 Marriott Downtown · 7:00 PM</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag fundraiser">Fundraiser</span>
+          <p style="font-size:14px; color:var(--gray-600);">Annual gala supporting scholarships and community welfare programs. Formal attire.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:var(--red); color:var(--white); display:inline-flex;">RSVP</a>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date"><div class="month">Sep</div><div class="day">07</div></div>
+          <div class="event-info"><h4>Back to School Drive</h4><p>📍 Various Austin Locations</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag youth">Youth</span>
+          <p style="font-size:14px; color:var(--gray-600);">School supply distribution for Liberian families with school-aged children.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:var(--blue); color:var(--white); display:inline-flex;">Volunteer</a>
+        </div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-header">
+          <div class="event-date" style="background:var(--gold);"><div class="month">Oct</div><div class="day">11</div></div>
+          <div class="event-info"><h4>Cultural Heritage Festival</h4><p>📍 Zilker Park · 10:00 AM</p></div>
+        </div>
+        <div class="event-body">
+          <span class="event-tag cultural">Cultural</span>
+          <p style="font-size:14px; color:var(--gray-600);">A showcase of Liberian art, cuisine, fashion, and traditional ceremonies.</p>
+          <a href="#" class="btn btn-sm" style="margin-top:14px; background:var(--gold); color:var(--white); display:inline-flex;">RSVP</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://app.alkeledger.com/laat/events" target="_blank" class="btn" style="background:var(--blue); color:var(--white);">View Full Calendar</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRESIDENT MESSAGE -->
+<section class="president-section">
+  <div class="section-inner">
+    <div class="president-inner">
+      <img src="photos/president_JC Johnson.jpeg" alt="President JC Johnson" class="president-photo" style="object-fit:cover;">
+      <span class="section-tag">President's Message</span>
+      <blockquote class="president-quote">
+        "LAAT is more than an organization — it is a family. A community that lifts each other up, celebrates our heritage, and works together to build a better future for every Liberian in Austin. I am honored to serve you."
+      </blockquote>
+      <p class="president-name">JC Johnson</p>
+      <p class="president-title">President, Liberian Association of Austin Texas</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section id="transparency" class="transparency-bg">
+  <div class="section-inner">
+    <span class="section-tag" style="color:#FFC94D;">Governance</span>
+    <h2 class="section-title">Financial Transparency Portal</h2>
+    <p class="section-sub" style="max-width:520px;">"Strong organizations are built on trust, openness, and accountability." LAAT is committed to full transparency with our members.</p>
+    <div class="trans-grid">
+      <a class="trans-card" href="https://app.alkeledger.com/laat/transparency" target="_blank">
+        <div class="trans-card-icon">📊</div>
+        <h4>Annual Financial Reports</h4>
+        <p>Complete income and expenditure statements reviewed and approved by membership.</p>
+      </a>
+      <a class="trans-card" href="https://app.alkeledger.com/laat/transparency" target="_blank">
+        <div class="trans-card-icon">📝</div>
+        <h4>Meeting Minutes</h4>
+        <p>Full records of all general assembly and executive board meetings, searchable and archived.</p>
+      </a>
+      <a class="trans-card" href="https://app.alkeledger.com/laat/transparency" target="_blank">
+        <div class="trans-card-icon">📋</div>
+        <h4>Budget Reports</h4>
+        <p>Quarterly budget vs. actuals showing how your dues and donations are being used.</p>
+      </a>
+      <a class="trans-card" href="https://app.alkeledger.com/laat/documents" target="_blank">
+        <div class="trans-card-icon">🏛️</div>
+        <h4>Governance Documents</h4>
+        <p>Our Constitution, Bylaws, and organizational policies — fully accessible to all members.</p>
+      </a>
+      <a class="trans-card" href="https://app.alkeledger.com/laat/transparency" target="_blank">
+        <div class="trans-card-icon">💰</div>
+        <h4>Donation Reports</h4>
+        <p>Detailed accounting of all donations received and how funds were allocated and disbursed.</p>
+      </a>
+      <a class="trans-card" href="https://app.alkeledger.com/laat/transparency" target="_blank">
+        <div class="trans-card-icon">🗺️</div>
+        <h4>Strategic Plans</h4>
+        <p>Multi-year strategic roadmaps and progress updates on organizational goals.</p>
+      </a>
+    </div>
+    <div class="trans-quote">
+      <blockquote>"Transparency Builds Trust."</blockquote>
+      <cite>— Liberian Association of Austin Texas, Core Value</cite>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#" class="btn btn-white laat-portal-link">Access Portal</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="bg-ivory">
+  <div class="section-inner">
+    <span class="section-tag">Join Us</span>
+    <h2 class="section-title">Become a Member</h2>
+    <p class="section-sub">Membership in LAAT gives you access to community resources, cultural events, welfare support, and a network of Liberians across Central Texas.</p>
+    <div class="membership-grid">
+      <div class="mem-card">
+        <div class="mem-header">
+          <div class="mem-badge">Individual</div>
+          <div class="mem-title">Standard</div>
+          <div class="mem-price" id="laat-price-individual">$60 <span>/ year</span></div>
+        </div>
+        <div class="mem-body">
+          <ul class="mem-features">
+            <li>Full voting rights at general meetings</li>
+            <li>Access to community events at member rates</li>
+            <li>Eligibility for welfare support</li>
+            <li>Access to member directory</li>
+            <li>Monthly newsletter</li>
+          </ul>
+        </div>
+        <div class="mem-footer">
+          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now</a>
+        </div>
+      </div>
+      <div class="mem-card featured">
+        <div class="mem-header featured-header">
+          <div class="mem-badge featured-badge">Most Popular</div>
+          <div class="mem-title" style="color:var(--white);">Family</div>
+          <div class="mem-price" style="color:#FFC94D;">$100 <span style="color:rgba(255,255,255,0.5);">/ year</span></div>
+        </div>
+        <div class="mem-body">
+          <ul class="mem-features">
+            <li>All Standard benefits for entire family</li>
+            <li>Voting rights for head of household</li>
+            <li>Priority welfare support</li>
+            <li>Free children's activities access</li>
+            <li>Scholarship eligibility for children</li>
+            <li>Family listing in member directory</li>
+          </ul>
+        </div>
+        <div class="mem-footer">
+          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now</a>
+        </div>
+      </div>
+      <div class="mem-card">
+        <div class="mem-header">
+          <div class="mem-badge" style="background:#E8F5E9; color:#1B5E20;">Corporate</div>
+          <div class="mem-title">Business Partner</div>
+          <div class="mem-price" id="laat-price-corporate">$250 <span>/ year</span></div>
+        </div>
+        <div class="mem-body">
+          <ul class="mem-features">
+            <li>Business listing in LAAT directory</li>
+            <li>Logo placement on website</li>
+            <li>Sponsorship recognition at events</li>
+            <li>Networking introductions</li>
+            <li>All family membership benefits</li>
+          </ul>
+        </div>
+        <div class="mem-footer">
+          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Apply</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--blue-light); border-radius:var(--radius-lg); padding:28px 32px; margin-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+      <div>
+        <h4 style="font-size:18px; font-weight:700; color:var(--blue-dark); margin-bottom:6px;">Volunteer with LAAT</h4>
+        <p style="font-size:14px; color:var(--blue-mid);">Make a difference without financial commitment. Volunteers are the backbone of our community.</p>
+      </div>
+      <a href="#contact" class="btn btn-white" style="background:var(--blue); color:var(--white); white-space:nowrap;">Become a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTH & EDUCATION -->
+<section id="youth">
+  <div class="section-inner">
+    <span class="section-tag">Future Leaders</span>
+    <h2 class="section-title">Youth &amp; Education</h2>
+    <p class="section-sub">Investing in the next generation of Liberian-Americans through scholarships, mentorship, and leadership development.</p>
+    <div class="youth-grid">
+      <div class="youth-card reveal">
+        <div class="youth-icon" style="background:#E8F5E9;">🎓</div>
+        <div>
+          <h4>Scholarship Program</h4>
+          <p>Annual scholarships for Liberian students pursuing higher education. Merit and need-based awards supporting undergraduate and graduate students.</p>
+        </div>
+      </div>
+      <div class="youth-card reveal">
+        <div class="youth-icon" style="background:var(--blue-light);">🤝</div>
+        <div>
+          <h4>Mentorship Network</h4>
+          <p>Connecting Liberian youth with established professionals in fields including law, medicine, engineering, business, and public service.</p>
+        </div>
+      </div>
+      <div class="youth-card reveal">
+        <div class="youth-icon" style="background:var(--gold-light);">📖</div>
+        <div>
+          <h4>Tutoring &amp; Academic Support</h4>
+          <p>Free tutoring sessions and academic support for K–12 students, helping children thrive in Austin schools and beyond.</p>
+        </div>
+      </div>
+      <div class="youth-card reveal">
+        <div class="youth-icon" style="background:var(--red-light);">💼</div>
+        <div>
+          <h4>Internship &amp; Career Pathways</h4>
+          <p>Partnering with Austin businesses and organizations to create internship and job opportunities for Liberian young adults.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="#contact" class="btn" style="background:var(--blue); color:var(--white);">Apply for Scholarship</a>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS NETWORK -->
+<section id="business" class="bg-gray">
+  <div class="section-inner">
+    <span class="section-tag">Entrepreneurship</span>
+    <h2 class="section-title">Business &amp; Professional Network</h2>
+    <p class="section-sub">Supporting Liberian-owned businesses and professionals in Austin through visibility, networking, and community support.</p>
+    <div class="biz-grid">
+      <div class="biz-card reveal">
+        <div class="biz-avatar">🏥</div>
+        <div class="biz-name">Liberian Medical Associates</div>
+        <div class="biz-category">Healthcare</div>
+        <p class="biz-desc">Community health services with a focus on culturally competent care for the African diaspora.</p>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-avatar">⚖️</div>
+        <div class="biz-name">Togba Law Group</div>
+        <div class="biz-category">Legal Services</div>
+        <p class="biz-desc">Immigration law, family law, and business formation services in Austin, Texas.</p>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-avatar">🍽️</div>
+        <div class="biz-name">Kollie's Liberian Kitchen</div>
+        <div class="biz-category">Restaurant</div>
+        <p class="biz-desc">Authentic Liberian cuisine bringing the flavors of home to Central Texas.</p>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-avatar">🏠</div>
+        <div class="biz-name">Liberian Realty Group</div>
+        <div class="biz-category">Real Estate</div>
+        <p class="biz-desc">Helping Liberian families achieve homeownership in the Greater Austin area.</p>
+      </div>
+      <div class="biz-card reveal">
+        <div class="biz-avatar">💻</div>
+        <div class="biz-name">Duo Tech Solutions</div>
+        <div class="biz-category">Technology</div>
+        <p class="biz-desc">IT consulting and web development services for small businesses and nonprofits.</p>
+      </div>
+      <div class="biz-card reveal" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; border:2px dashed var(--gray-200); background:transparent;">
+        <div style="font-size:36px; margin-bottom:10px;">➕</div>
+        <div class="biz-name">List Your Business</div>
+        <p class="biz-desc" style="margin-top:8px;">Join the LAAT business directory and connect with the Liberian community.</p>
+        <a href="#contact" class="btn btn-sm" style="background:var(--blue); color:var(--white); margin-top:16px;">Get Listed</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELFARE -->
+<section id="welfare">
+  <div class="section-inner">
+    <span class="section-tag">Support Services</span>
+    <h2 class="section-title">Community Welfare &amp; Support</h2>
+    <p class="section-sub">LAAT stands with members in times of need. Our welfare programs provide a safety net for Liberian families in Austin.</p>
+    <div class="welfare-grid">
+      <div class="welfare-card">
+        <div class="welfare-icon">🆘</div>
+        <h4>Emergency Assistance</h4>
+        <p>Immediate financial and logistical support for members facing unexpected hardship or crisis situations.</p>
+      </div>
+      <div class="welfare-card blue-top">
+        <div class="welfare-icon">🕊️</div>
+        <h4>Bereavement Support</h4>
+        <p>Compassionate support for families during loss, including coordination of community condolences and memorial services.</p>
+      </div>
+      <div class="welfare-card gold-top">
+        <div class="welfare-icon">👨‍👩‍👧</div>
+        <h4>Family Assistance</h4>
+        <p>Programs to support new arrivals, single-parent families, and members navigating major life transitions.</p>
+      </div>
+      <div class="welfare-card">
+        <div class="welfare-icon">📋</div>
+        <h4>Immigration Resources</h4>
+        <p>Referrals to trusted immigration attorneys and legal aid organizations serving the Liberian community.</p>
+      </div>
+      <div class="welfare-card blue-top">
+        <div class="welfare-icon">🧠</div>
+        <h4>Counseling Referrals</h4>
+        <p>Connecting members with culturally informed mental health and counseling professionals in Austin.</p>
+      </div>
+      <div class="welfare-card gold-top">
+        <div class="welfare-icon">🏥</div>
+        <h4>Health &amp; Wellness</h4>
+        <p>Health fairs, screenings, and partnerships with local clinics to support member wellbeing.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="#contact" class="btn" style="background:var(--red); color:var(--white);">Request Support</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bg-ivory">
+  <div class="section-inner">
+    <span class="section-tag">Media</span>
+    <h2 class="section-title">Community Gallery</h2>
+    <p class="section-sub">A living archive of LAAT's journey — our celebrations, our people, and our culture.</p>
+    <div class="gallery-grid">
+      <div class="gallery-cell gc1">
+        <div class="gallery-cell-overlay">
+          <div class="gallery-cell-label">Independence Day Gala 2024</div>
+          <div class="gallery-cell-sub">Cultural Celebration · 200+ Attendees</div>
+        </div>
+      </div>
+      <div class="gallery-cell gc2">
+        <div class="gallery-cell-overlay">
+          <div class="gallery-cell-label">Youth Leadership</div>
+          <div class="gallery-cell-sub">Annual Workshop</div>
+        </div>
+      </div>
+      <div class="gallery-cell" style="background:url('photos/LAAT 2024 Christmas Gifts Giveaway.jpeg') center/cover no-repeat;">
+        <div class="gallery-cell-overlay">
+          <div class="gallery-cell-label">Christmas Gift Giveaway</div>
+          <div class="gallery-cell-sub">Community Outreach · 2024</div>
+        </div>
+      </div>
+      <div class="gallery-cell" style="background:url('photos/LAAT Fitness Walk.jpeg') center/cover no-repeat;">
+        <div class="gallery-cell-overlay">
+          <div class="gallery-cell-label">Community Fitness Walk</div>
+          <div class="gallery-cell-sub">Health &amp; Wellness · 2024</div>
+        </div>
+      </div>
+      <div class="gallery-cell gc5">
+        <div class="gallery-cell-overlay">
+          <div class="gallery-cell-label">Scholarship Awards</div>
+          <div class="gallery-cell-sub">Annual Ceremony</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#" class="btn" style="background:var(--blue); color:var(--white);">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate" class="donate-bg">
+  <div class="section-inner">
+    <div class="donate-inner">
+      <span class="section-tag" style="color:#FFC94D;">Support LAAT</span>
+      <h2 class="section-title">Make a Difference Today</h2>
+      <p>Your generosity funds scholarships, welfare programs, cultural events, and community services that strengthen Liberians across Austin.</p>
+      <div class="donate-tiers">
+        <button class="donate-tier">$25</button>
+        <button class="donate-tier active">$50</button>
+        <button class="donate-tier">$100</button>
+        <button class="donate-tier">$250</button>
+        <button class="donate-tier">Custom</button>
+      </div>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="#contact" class="btn btn-white">One-Time Donation</a>
+        <a href="#contact" class="btn btn-outline">Monthly Support</a>
+        <a href="#contact" class="btn btn-gold">Sponsorship Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-tag">Get in Touch</span>
+    <h2 class="section-title">Contact LAAT</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We're Here to Help</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h5>Email</h5>
+            <p>info@laataustin.org</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <h5>Website</h5>
+            <p>www.laataustin.org</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h5>Meeting Location</h5>
+            <p>Austin, Texas · Location varies by event</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🗓️</div>
+          <div>
+            <h5>General Meetings</h5>
+            <p>Second Saturday of each month · 2:00 PM</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link">📘</a>
+          <a href="#" class="social-link">📸</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">▶️</a>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-icon">📍</div>
+          <strong>Austin, Texas</strong>
+          <p>LAAT Community · Central Austin</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 style="font-family:var(--font-display); font-size:22px; margin-bottom:24px; color:var(--text);">Send a Message</h3>
+        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Doe">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control" placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select class="form-control">
+            <option>Membership Inquiry</option>
+            <option>Event Information</option>
+            <option>Welfare Support</option>
+            <option>Business Directory</option>
+            <option>Donation / Sponsorship</option>
+            <option>General Question</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-control" placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:4px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-size:13px; font-family:var(--font-display);">LAAT</div>
+          <div>
+            <div style="color:var(--white); font-weight:600; font-size:15px;">Liberian Association</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.4);">of Austin Texas</div>
+          </div>
+        </div>
+        <p>Unity, Progress, and Opportunity for Every Liberian in Central Texas.</p>
+        <div style="margin-top:16px;">
+          <h4 style="color:var(--white); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Newsletter</h4>
+          <div class="newsletter-row">
+            <input type="email" class="newsletter-input" placeholder="Your email address">
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Organization</h4>
+        <ul>
+          <li><a href="#about">About LAAT</a></li>
+          <li><a href="https://app.alkeledger.com/laat/members" target="_blank">Leadership Team</a></li>
+          <li><a href="https://app.alkeledger.com/laat/documents" target="_blank">Constitution &amp; Bylaws</a></li>
+          <li><a href="https://app.alkeledger.com/laat/transparency" target="_blank">Meeting Minutes</a></li>
+          <li><a href="https://app.alkeledger.com/laat/transparency" target="_blank">Financial Reports</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#youth">Scholarships</a></li>
+          <li><a href="#youth">Youth Programs</a></li>
+          <li><a href="#welfare">Welfare Support</a></li>
+          <li><a href="#business">Business Network</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://app.alkeledger.com/laat/events" target="_blank">Events Calendar</a></li>
+          <li><a href="#gallery">Media Gallery</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Liberian Association of Austin Texas · <a href="https://www.laataustin.org" target="_blank">laataustin.org</a></span>
+      <span style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#transparency">Financial Reports</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Dynamic footer year
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // Contact form — mailto fallback
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    window.location.href = 'mailto:info@laataustin.org';
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Donate tier toggle
+  document.querySelectorAll('.donate-tier').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.donate-tier').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Mobile nav (simplified)
+  function toggleMobileNav() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--blue-dark);padding:12px 24px 20px;gap:4px;border-top:2px solid var(--red);z-index:999;';
+    }
+  }
+
+  // ── AlkeLedger Live Data ──────────────────────────────────────────────────
+  (function () {
+    // Set this to the org's AlkeLedger slug (visible in the app URL: app.alkeledger.com/{slug})
+    var ORG_SLUG  = 'laat';
+    var API_URL   = 'https://app.alkeledger.com/api/public-data';
+    var APP_URL   = 'https://app.alkeledger.com';
+    var MONTHS    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function parseDate(iso) {
+      var parts = iso.split('T');
+      var d = parts[0].split('-');
+      return { month: parseInt(d[1], 10), day: parseInt(d[2], 10), time: parts[1] ? parts[1].substring(0, 5) : null };
+    }
+
+    function fmtTime(hhmm) {
+      if (!hhmm) return '';
+      var p = hhmm.split(':');
+      var h = parseInt(p[0], 10), m = parseInt(p[1], 10);
+      return (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + ' ' + (h >= 12 ? 'PM' : 'AM');
+    }
+
+    function renderCard(ev) {
+      var pd       = parseDate(ev.startDate);
+      var timeStr  = ev.allDay ? '' : fmtTime(pd.time);
+      var metaParts = [];
+      if (ev.location) metaParts.push('📍 ' + ev.location);
+      if (timeStr)     metaParts.push(timeStr);
+      var rsvpUrl  = APP_URL + '/share/' + ORG_SLUG + '/event/' + ev.id;
+      var descHtml = ev.description
+        ? '<p style="font-size:14px;color:var(--gray-600);">' + ev.description.substring(0, 130) + (ev.description.length > 130 ? '…' : '') + '</p>'
+        : '';
+      return '<div class="event-card reveal visible">'
+        + '<div class="event-header">'
+        +   '<div class="event-date"><div class="month">' + MONTHS[pd.month - 1] + '</div><div class="day">' + pd.day + '</div></div>'
+        +   '<div class="event-info"><h4>' + ev.title + '</h4>'
+        +     (metaParts.length ? '<p>' + metaParts.join(' · ') + '</p>' : '')
+        +   '</div>'
+        + '</div>'
+        + '<div class="event-body">'
+        +   '<span class="event-tag">Event</span>'
+        +   descHtml
+        +   '<a href="' + rsvpUrl + '" target="_blank" class="btn btn-sm" style="margin-top:14px;background:var(--blue);color:var(--white);display:inline-flex;">RSVP</a>'
+        + '</div></div>';
+    }
+
+    fetch(API_URL + '?orgSlug=' + encodeURIComponent(ORG_SLUG))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+
+        // Member count
+        if (data.memberCount != null) {
+          var el = document.getElementById('stats-members');
+          if (el) el.textContent = data.memberCount + '+';
+        }
+
+        // Upcoming events
+        var grid = document.getElementById('laat-events-grid');
+        if (grid && Array.isArray(data.upcomingEvents)) {
+          if (data.upcomingEvents.length === 0) {
+            grid.innerHTML = '<p style="color:var(--gray-600);grid-column:1/-1;text-align:center;padding:40px 0;">No upcoming events scheduled. Check back soon.</p>';
+          } else {
+            grid.innerHTML = data.upcomingEvents.map(renderCard).join('');
+          }
+        }
+
+        // Dues rates → membership prices
+        if (data.duesRates) {
+          var ind  = document.getElementById('laat-price-individual');
+          var corp = document.getElementById('laat-price-corporate');
+          if (ind  && data.duesRates.individual)   ind.innerHTML  = '$' + data.duesRates.individual   + ' <span>/ year</span>';
+          if (corp && data.duesRates.organization) corp.innerHTML = '$' + data.duesRates.organization + ' <span>/ year</span>';
+        }
+
+        // Transparency portal links
+        if (data.transparencyUrl) {
+          document.querySelectorAll('.laat-portal-link').forEach(function (a) {
+            a.href   = data.transparencyUrl;
+            a.target = '_blank';
+          });
+        }
+      })
+      .catch(function (err) {
+        console.warn('[LAAT] Could not load AlkeLedger data:', err);
+      });
+  })();
+</script>
+</body>
+</html>

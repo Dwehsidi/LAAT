@@ -1074,15 +1074,27 @@
       <span class="section-tag" style="color:#FFC94D;">Support LAAT</span>
       <h2 class="section-title">Make a Difference Today</h2>
       <p>Your generosity funds scholarships, welfare programs, cultural events, and community services that strengthen Liberians across Austin.</p>
+
+      <!-- AMOUNT SELECTOR -->
       <div class="donate-tiers">
-        <button class="donate-tier">$25</button>
-        <button class="donate-tier active">$50</button>
-        <button class="donate-tier">$100</button>
-        <button class="donate-tier">$250</button>
-        <button class="donate-tier">Custom</button>
+        <button class="donate-tier" onclick="setDonation(25)">$25</button>
+        <button class="donate-tier active" onclick="setDonation(50)">$50</button>
+        <button class="donate-tier" onclick="setDonation(100)">$100</button>
+        <button class="donate-tier" onclick="setDonation(250)">$250</button>
+        <button class="donate-tier" onclick="setDonation('Custom')">Custom</button>
       </div>
+
+      <!-- ZELLE PAYMENT BOX -->
+      <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-lg); padding:28px 32px; margin-bottom:24px;">
+        <p style="color:rgba(255,255,255,0.7); font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Send via Zelle</p>
+        <div style="display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <div style="font-size:32px; font-weight:800; color:#FFC94D; letter-spacing:2px;" id="donate-zelle-tag">LAAT26</div>
+          <button onclick="copyZelle()" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:6px; color:var(--white); font-size:13px; font-weight:600; padding:6px 14px; cursor:pointer; font-family:var(--font-body);">Copy</button>
+        </div>
+        <p style="color:rgba(255,255,255,0.6); font-size:13px; margin-top:12px;" id="donate-note">In your Zelle payment note, write: <strong style="color:var(--white);">"Donation – $50"</strong></p>
+      </div>
+
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a href="#contact" class="btn btn-white">One-Time Donation</a>
         <a href="#contact" class="btn btn-outline">Monthly Support</a>
         <a href="#contact" class="btn btn-gold">Sponsorship Package</a>
       </div>
@@ -1256,13 +1268,24 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
-  // Donate tier toggle
-  document.querySelectorAll('.donate-tier').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.donate-tier').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+  // Donate tier toggle + payment note update
+  var currentDonation = 50;
+  function setDonation(amount) {
+    currentDonation = amount;
+    document.querySelectorAll('.donate-tier').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    var note = document.getElementById('donate-note');
+    if (note) {
+      var label = amount === 'Custom' ? 'your amount' : '$' + amount;
+      note.innerHTML = 'In your Zelle payment note, write: <strong style="color:var(--white);">"Donation – ' + label + '"</strong>';
+    }
+  }
+  function copyZelle() {
+    navigator.clipboard.writeText('LAAT26').then(function() {
+      var btn = document.querySelector('[onclick="copyZelle()"]');
+      if (btn) { btn.textContent = 'Copied!'; setTimeout(function(){ btn.textContent = 'Copy'; }, 2000); }
     });
-  });
+  }
 
   // Mobile nav (simplified)
   function toggleMobileNav() {

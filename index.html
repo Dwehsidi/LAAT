@@ -463,6 +463,22 @@
   }
   .newsletter-btn:hover { background: var(--red-dark); }
 
+  /* LEADERSHIP GRID */
+  .leadership-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 8px; }
+  .leader-card { text-align: center; }
+  .leader-photo {
+    width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+    border: 4px solid var(--white); box-shadow: var(--shadow-md);
+    margin: 0 auto 14px; display: block;
+  }
+  .leader-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .leader-title { font-size: 13px; color: var(--gray-600); font-weight: 500; }
+  @media (max-width: 900px) { .leadership-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .leadership-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .leader-photo { width: 90px; height: 90px; } }
+
+  /* NAV LOGO as image */
+  img.nav-logo-badge { object-fit: cover; }
+
   /* SCROLL-ANIMATE */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
   .reveal.visible { opacity: 1; transform: none; }
@@ -517,7 +533,7 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#home">
-      <div class="nav-logo-badge">LAAT</div>
+      <div class="nav-logo-badge" id="nav-logo-badge">LAAT</div>
       <div class="nav-logo-text">
         <span class="nav-logo-title">Liberian Association of Austin</span>
         <span class="nav-logo-sub">Austin, Texas · EST. 2000s</span>
@@ -527,9 +543,9 @@
       <a href="#about">About</a>
       <a href="#membership">Membership</a>
       <a href="#events">Events</a>
+      <a href="#leadership">Leadership</a>
       <a href="#transparency">Transparency</a>
       <a href="#youth">Youth</a>
-      <a href="#business">Business</a>
       <a href="#donate" class="nav-cta">Donate</a>
     </div>
     <div class="mobile-menu-btn" onclick="toggleMobileNav()">☰</div>
@@ -719,6 +735,40 @@
       </blockquote>
       <p class="president-name">JC Johnson</p>
       <p class="president-title">President, Liberian Association of Austin Texas</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section id="leadership" class="bg-gray">
+  <div class="section-inner">
+    <span class="section-tag">Our Team</span>
+    <h2 class="section-title">Leadership Team</h2>
+    <p class="section-sub">Dedicated servants of the Liberian community in Austin, committed to unity, progress, and accountability.</p>
+    <div class="leadership-grid">
+      <div class="leader-card reveal">
+        <img src="photos/president_JC Johnson.jpeg" alt="JC Johnson" class="leader-photo">
+        <div class="leader-name">JC Johnson</div>
+        <div class="leader-title">President</div>
+      </div>
+      <div class="leader-card reveal">
+        <img src="photos/Rev. Dr. J. Varney Gray - Vice President.jpeg" alt="Rev. Dr. J. Varney Gray" class="leader-photo">
+        <div class="leader-name">Rev. Dr. J. Varney Gray</div>
+        <div class="leader-title">Vice President</div>
+      </div>
+      <div class="leader-card reveal">
+        <img src="photos/Paul Perry - Board Chairman.jpeg" alt="Paul Perry" class="leader-photo">
+        <div class="leader-name">Paul Perry</div>
+        <div class="leader-title">Board Chairman</div>
+      </div>
+      <div class="leader-card reveal">
+        <img src="photos/Hon. Winston N. Taylor.jpeg" alt="Hon. Winston N. Taylor" class="leader-photo">
+        <div class="leader-name">Hon. Winston N. Taylor</div>
+        <div class="leader-title">Board Member</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://app.alkeledger.com/laat/members" target="_blank" class="btn" style="background:var(--blue); color:var(--white);">View Full Directory</a>
     </div>
   </div>
 </section>
@@ -987,10 +1037,10 @@
     <h2 class="section-title">Community Gallery</h2>
     <p class="section-sub">A living archive of LAAT's journey — our celebrations, our people, and our culture.</p>
     <div class="gallery-grid">
-      <div class="gallery-cell gc1">
+      <div class="gallery-cell" style="background:url('photos/Post fitness walk.jpeg') center/cover no-repeat;">
         <div class="gallery-cell-overlay">
-          <div class="gallery-cell-label">Independence Day Gala 2024</div>
-          <div class="gallery-cell-sub">Cultural Celebration · 200+ Attendees</div>
+          <div class="gallery-cell-label">Community Fitness Walk</div>
+          <div class="gallery-cell-sub">Health &amp; Wellness · Austin</div>
         </div>
       </div>
       <div class="gallery-cell gc2">
@@ -1140,7 +1190,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div style="display:flex; align-items:center; gap:12px; margin-bottom:4px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-size:13px; font-family:var(--font-display);">LAAT</div>
+          <div id="footer-logo-badge" style="width:40px; height:40px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-size:13px; font-family:var(--font-display); overflow:hidden; flex-shrink:0;">LAAT</div>
           <div>
             <div style="color:var(--white); font-weight:600; font-size:15px;">Liberian Association</div>
             <div style="font-size:12px; color:rgba(255,255,255,0.4);">of Austin Texas</div>
@@ -1310,6 +1360,20 @@
           document.querySelectorAll('.laat-portal-link').forEach(function (a) {
             a.href   = data.transparencyUrl;
             a.target = '_blank';
+          });
+        }
+
+        // Org logo — swap text badge for real image if workspace has one
+        if (data.logoUrl) {
+          ['nav-logo-badge', 'footer-logo-badge'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            var img = document.createElement('img');
+            img.src = data.logoUrl;
+            img.alt = 'LAAT';
+            img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:50%;';
+            el.innerHTML = '';
+            el.appendChild(img);
           });
         }
       })

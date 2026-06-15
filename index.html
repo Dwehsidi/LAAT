@@ -1205,8 +1205,8 @@
         <div style="margin-top:16px;">
           <h4 style="color:var(--white); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Newsletter</h4>
           <div class="newsletter-row">
-            <input type="email" class="newsletter-input" placeholder="Your email address">
-            <button class="newsletter-btn">Subscribe</button>
+            <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Your email address">
+            <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
           </div>
         </div>
       </div>
@@ -1214,7 +1214,7 @@
         <h4>Organization</h4>
         <ul>
           <li><a href="#about">About LAAT</a></li>
-          <li><a href="https://app.alkeledger.com/laat/members" target="_blank">Leadership Team</a></li>
+          <li><a href="#leadership">Leadership Team</a></li>
           <li><a href="https://app.alkeledger.com/laat/documents" target="_blank">Constitution &amp; Bylaws</a></li>
           <li><a href="https://app.alkeledger.com/laat/transparency" target="_blank">Meeting Minutes</a></li>
           <li><a href="https://app.alkeledger.com/laat/transparency" target="_blank">Financial Reports</a></li>
@@ -1227,6 +1227,7 @@
           <li><a href="#youth">Scholarships</a></li>
           <li><a href="#youth">Youth Programs</a></li>
           <li><a href="#welfare">Welfare Support</a></li>
+          <li><a href="#donate">Donate</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1234,18 +1235,17 @@
         <ul>
           <li><a href="https://app.alkeledger.com/laat/events" target="_blank">Events Calendar</a></li>
           <li><a href="#gallery">Media Gallery</a></li>
-          <li><a href="#donate">Donate</a></li>
           <li><a href="#contact">Contact Us</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li><a href="https://app.alkeledger.com/laat" target="_blank">Member Login</a></li>
+          <li><a href="mailto:info@laataustin.org">info@laataustin.org</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© <span id="footer-year"></span> Liberian Association of Austin Texas · <a href="https://www.laataustin.org" target="_blank">laataustin.org</a></span>
       <span style="display:flex; gap:20px;">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#transparency">Financial Reports</a>
+        <a href="https://app.alkeledger.com/laat/transparency" target="_blank">Financial Reports</a>
+        <a href="#contact">Contact</a>
       </span>
     </div>
   </div>
@@ -1259,6 +1259,14 @@
   function handleContactSubmit(e) {
     e.preventDefault();
     window.location.href = 'mailto:info@laataustin.org';
+  }
+
+  // Newsletter subscribe — mailto fallback
+  function subscribeNewsletter() {
+    var email = (document.getElementById('newsletter-email').value || '').trim();
+    var subject = encodeURIComponent('Newsletter Subscription');
+    var body = encodeURIComponent(email ? 'Please add ' + email + ' to the LAAT newsletter.' : 'Please add me to the LAAT newsletter.');
+    window.location.href = 'mailto:info@laataustin.org?subject=' + subject + '&body=' + body;
   }
 
   // Scroll reveal

@@ -473,7 +473,10 @@
   }
   .leader-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .leader-title { font-size: 13px; color: var(--gray-600); font-weight: 500; }
-  @media (max-width: 900px) { .leadership-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) {
+    .leadership-grid { grid-template-columns: repeat(2, 1fr); }
+    .join-steps { grid-template-columns: 1fr !important; }
+  }
   @media (max-width: 500px) { .leadership-grid { grid-template-columns: 1fr 1fr; gap: 16px; } .leader-photo { width: 90px; height: 90px; } }
 
   /* NAV LOGO as image */
@@ -828,6 +831,26 @@
     <span class="section-tag">Join Us</span>
     <h2 class="section-title">Become a Member</h2>
     <p class="section-sub">Membership in LAAT gives you access to community resources, cultural events, welfare support, and a network of Liberians across Central Texas.</p>
+
+    <!-- HOW TO JOIN STEPS -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px;">
+      <div style="background:var(--white); border-radius:var(--radius-lg); padding:24px; text-align:center; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; border-radius:50%; background:var(--blue); color:var(--white); font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">1</div>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Choose Your Plan</h4>
+        <p style="font-size:13px; color:var(--gray-600);">Select the membership tier that fits you or your family below.</p>
+      </div>
+      <div style="background:var(--white); border-radius:var(--radius-lg); padding:24px; text-align:center; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; border-radius:50%; background:var(--blue); color:var(--white); font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">2</div>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Contact LAAT</h4>
+        <p style="font-size:13px; color:var(--gray-600);">Fill out the contact form and we will send you an invite to the workspace.</p>
+      </div>
+      <div style="background:var(--white); border-radius:var(--radius-lg); padding:24px; text-align:center; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; border-radius:50%; background:var(--blue); color:var(--white); font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">3</div>
+        <h4 style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:6px;">Pay Your Dues</h4>
+        <p style="font-size:13px; color:var(--gray-600);">Send dues via <strong>Zelle · LAAT26</strong> and your membership will be activated.</p>
+      </div>
+    </div>
+
     <div class="membership-grid">
       <div class="mem-card">
         <div class="mem-header">
@@ -845,7 +868,8 @@
           </ul>
         </div>
         <div class="mem-footer">
-          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now</a>
+          <a href="#contact" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now →</a>
+          <p style="text-align:center; font-size:12px; color:var(--gray-400); margin-top:10px;">Pay dues via Zelle · <strong style="color:var(--gray-600);">LAAT26</strong></p>
         </div>
       </div>
       <div class="mem-card featured">
@@ -865,7 +889,8 @@
           </ul>
         </div>
         <div class="mem-footer">
-          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now</a>
+          <a href="#contact" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Join Now →</a>
+          <p style="text-align:center; font-size:12px; color:var(--gray-400); margin-top:10px;">Pay dues via Zelle · <strong style="color:var(--gray-600);">LAAT26</strong></p>
         </div>
       </div>
       <div class="mem-card">
@@ -884,11 +909,23 @@
           </ul>
         </div>
         <div class="mem-footer">
-          <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Apply</a>
+          <a href="#contact" class="btn btn-sm" style="background:var(--blue); color:var(--white); width:100%; justify-content:center;">Apply →</a>
+          <p style="text-align:center; font-size:12px; color:var(--gray-400); margin-top:10px;">Pay dues via Zelle · <strong style="color:var(--gray-600);">LAAT26</strong></p>
         </div>
       </div>
     </div>
-    <div style="background:var(--blue-light); border-radius:var(--radius-lg); padding:28px 32px; margin-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+
+    <!-- EXISTING MEMBER NOTE -->
+    <div style="background:var(--blue-light); border-radius:var(--radius-lg); padding:20px 28px; margin-top:24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+      <span style="font-size:22px;">🔑</span>
+      <div style="flex:1;">
+        <h4 style="font-size:15px; font-weight:700; color:var(--blue-dark); margin-bottom:2px;">Already a member?</h4>
+        <p style="font-size:13px; color:var(--blue-mid);">Access your workspace, view dues status, events, and documents in AlkeLedger.</p>
+      </div>
+      <a href="https://app.alkeledger.com/laat" target="_blank" class="btn btn-sm" style="background:var(--blue); color:var(--white); white-space:nowrap;">Access Workspace →</a>
+    </div>
+
+    <div style="background:var(--blue-light); border-radius:var(--radius-lg); padding:28px 32px; margin-top:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
       <div>
         <h4 style="font-size:18px; font-weight:700; color:var(--blue-dark); margin-bottom:6px;">Volunteer with LAAT</h4>
         <p style="font-size:14px; color:var(--blue-mid);">Make a difference without financial commitment. Volunteers are the backbone of our community.</p>
